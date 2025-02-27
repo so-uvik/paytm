@@ -1,0 +1,8 @@
+{
+  "name": "@repo/ui-button",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "exports": {
+    ".": "./index.tsx"
+  }
+} 
