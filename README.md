@@ -1,3 +1,40 @@
+# How to get started with this application locally?
+
+- Navigate to `packages/db` and add a `.env` file, with a environment variable `DATABASE_URL` which will contain your database connection string
+- If you wanna use a local postgres database, first spinup your local database container with docker using the following command
+
+```sh
+docker run -e POSTGRES_PASSWORD=your_postgres_password -d -p 5432:5432 postgres
+```
+
+- And then add this as the connection string in the `DATABASE_URL` field:
+
+```sh
+postgresql://postgres:your_postgres_password@localhost:5432/postgres
+```
+
+## Migrating Database and generating clients
+
+In the project root run:
+
+```sh
+npx turbo db:migrate
+```
+
+Then, to generate clients:
+
+```sh
+npx turbo db:generate
+```
+
+And you're done setting up the project locally!
+
+Now navigate to the project root and type the below command to start the local development server:
+
+```sh
+npx turbo dev
+```
+
 # Turborepo starter
 
 This Turborepo starter is maintained by the Turborepo core team.
